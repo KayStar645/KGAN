@@ -1,7 +1,7 @@
 torch==1.7.1+cpu
 torchvision==0.8.2+cpu
 torchaudio==0.7.2
-numpy==1.19.5
+numpy==1.24.4
 pytorch-pretrained-bert==0.6.2
 nltk==3.8.1
 spacy==2.2.4
@@ -35,3 +35,9 @@ packaging==24.2
 sacremoses==0.1.1
 pandas==2.0.3
 pytz==2025.1
+scikit-learn==1.2.2
+scipy==1.8.1
+joblib==1.4.2
+threadpoolctl==3.5.0
+torchstat==0.0.7
+thop==0.1.1.post2209072238

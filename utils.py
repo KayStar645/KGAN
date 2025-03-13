@@ -7,7 +7,8 @@ from model.rgat_file.read_dep_graph import *
 import json
 import random
 from pytorch_pretrained_bert import BertModel, BertTokenizer
-bert_tokenizer = BertTokenizer.from_pretrained(r'./bert-base-uncased/vocab.txt')
+from transformers import BertTokenizer
+bert_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 from transformers import RobertaTokenizer, RobertaModel
 roberta_tokenizer = RobertaTokenizer.from_pretrained(r'./roberta-base')
 import copy
@@ -747,10 +748,9 @@ def build_dataset(args,is_bert=False):
     else:
         if args.model == 'KGNN':
             bert_vocab={}
-            if args.is_bert==1:
-                with open(r'bert-base-uncased/vocab.txt','r', encoding='utf-8') as f:
-                    for num,line in enumerate(f.readlines()):
-                        bert_vocab[line.strip()]=num
+            if args.is_bert == 1:
+                bert_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+                bert_vocab = bert_tokenizer.get_vocab()
             elif args.is_bert ==2:
                 with open(r'./roberta-base/vocab.json', 'r', encoding='utf-8') as f:
                     line = f.readline()

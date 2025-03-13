@@ -3,6 +3,7 @@
 
 ### Env
 * python 3.8.0
+* model_weight/temp
 
 ### Tạo môi trường ảo
 * python -m venv env
